@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _10.Interface_p
+namespace _10.Interface_t
 {
-    internal class ISP
+    internal interface IOpenable
     {
-        public interface IMonster
+        void Open();
+        void Close();
     }
 }
