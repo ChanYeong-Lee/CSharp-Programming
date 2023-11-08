@@ -8,6 +8,7 @@ namespace _12.Event_t
 {
     internal class Player
     {
+        public string name = "Player";
         public int hp { get; private set; } = 200;
         public int maxhp { get; private set; } = 200;
         public int damage { get; private set; } = 20;
@@ -21,7 +22,7 @@ namespace _12.Event_t
 
         public void Attack(Monster target)
         {
-            Console.Write("플레이어가 공격합니다.");
+            Console.WriteLine("플레이어가 공격합니다.");
             target.TakeHit(damage);
         }
     }

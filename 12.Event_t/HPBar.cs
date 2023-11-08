@@ -11,7 +11,7 @@ namespace _12.Event_t
     {
         public void ShowHPBar(int currentHp,int maxHp)
         {
-            Console.WriteLine("{2} 체력: {0}/{1}", currentHp, maxHp);
+            Console.WriteLine("체력: {0}/{1}", currentHp, maxHp);
         }   
     }
 }
