@@ -18,11 +18,13 @@ namespace _10.Interface_t
         public void Lock()
         {
             locked = true;
+            Console.WriteLine("차를 잠급니다.");
         }
 
         public void Unlock()
         { 
-            locked = false; 
+            locked = false;
+            Console.WriteLine("차의 잠금을 해제합니다.");
         } 
         public override void GetOn()
         {

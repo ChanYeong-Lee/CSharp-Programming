@@ -104,7 +104,7 @@
             // Potion을 넣으면 Potion을 반환
             public T UseItem<T>(T sav) where T : Item, new()
             {
-                T sav = new T();
+                sav = new T();
                 return sav;
             }
         }

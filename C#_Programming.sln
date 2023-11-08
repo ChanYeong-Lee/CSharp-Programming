@@ -39,9 +39,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "00.Test_1106", "00.Test_110
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NOTE", "NOTE\NOTE.csproj", "{D478D671-2A61-456B-BBEE-6C4C8C7B4D9F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.Interface_t", "10.RogueLikeGame\10.Interface_t.csproj", "{2F4D1BCB-7952-42B2-B526-C8791876FA6C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "10.Interface_t", "10.RogueLikeGame\10.Interface_t.csproj", "{2F4D1BCB-7952-42B2-B526-C8791876FA6C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.Interface_Compare", "10.Interface_Compare\10.Interface_Compare.csproj", "{373F2F81-DE47-4EF3-B5BF-4C10110A2BB0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "10.Interface_Compare", "10.Interface_Compare\10.Interface_Compare.csproj", "{373F2F81-DE47-4EF3-B5BF-4C10110A2BB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11.Delegate", "11.Delegate\11.Delegate.csproj", "{DEA6FF3E-B7C0-45CD-A427-120E75FDC8CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NOTEFORTRPG", "NOTEFORTRPG\NOTEFORTRPG.csproj", "{B18169B0-38A6-4D3A-BEFB-502D5BCF9BFE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -129,6 +133,14 @@ Global
 		{373F2F81-DE47-4EF3-B5BF-4C10110A2BB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{373F2F81-DE47-4EF3-B5BF-4C10110A2BB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{373F2F81-DE47-4EF3-B5BF-4C10110A2BB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEA6FF3E-B7C0-45CD-A427-120E75FDC8CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEA6FF3E-B7C0-45CD-A427-120E75FDC8CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEA6FF3E-B7C0-45CD-A427-120E75FDC8CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEA6FF3E-B7C0-45CD-A427-120E75FDC8CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B18169B0-38A6-4D3A-BEFB-502D5BCF9BFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B18169B0-38A6-4D3A-BEFB-502D5BCF9BFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B18169B0-38A6-4D3A-BEFB-502D5BCF9BFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B18169B0-38A6-4D3A-BEFB-502D5BCF9BFE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

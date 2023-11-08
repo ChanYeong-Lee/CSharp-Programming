@@ -1,82 +1,124 @@
-﻿    using System;
-namespace NOTE
+﻿using System;
+using System.Collections.Generic;
+
+class Program
 {
-    internal class Program
+    static void Main()
     {
-        static void Main(string[] args)
+        // 우선순위 큐 생성
+        PriorityQueue<int> priorityQueue = new PriorityQueue<int>();
+        AA a = new AA("a", 3);
+        AA b = new AA("b", 4);
+        AA c = new AA("c", 1);  
+        AA d = new AA("d", 2);      
+
+        // 요소 추가
+        priorityQueue.Enqueue(a.value);
+        priorityQueue.Enqueue(b.value);
+        priorityQueue.Enqueue(c.value);
+        priorityQueue.Enqueue(d.value);
+
+        // 우선순위 큐에서 요소 꺼내기
+        while (priorityQueue.Count > 0)
         {
-            Fit fit =new Fit();
-            fit.Main();
+            int item = priorityQueue.Dequeue();
+            switch(item)
+            {
+                case 1:
+                    Console.WriteLine(); break;
+                case 2:
+                    Console.WriteLine("d"); break;
+                case 3:
+                    Console.WriteLine("a"); break;
+                case 4:
+                    Console.WriteLine("b"); break;
+            }
+        }
+    }
+}
+
+public class AA
+{
+    public int value;
+    public string name;
+    public AA(string name, int value) 
+    { 
+        this.name = name;   
+        this.value = value; 
+    }
+}
+
+// PriorityQueue 클래스 정의
+public class PriorityQueue<T> where T : IComparable<T>
+{
+    private List<T> list = new List<T>();
+
+    public int Count => list.Count;
+
+    public void Enqueue(T value)
+    {
+        list.Add(value);
+        int currentIndex = list.Count - 1;
+
+        while (currentIndex > 0)
+        {
+            int parentIndex = (currentIndex - 1) / 2;
+            if (list[currentIndex].CompareTo(list[parentIndex]) >= 0)
+            {
+                break;
+            }
+
+            // 부모와 자식 노드의 값을 교환
+            T temp = list[currentIndex];
+            list[currentIndex] = list[parentIndex];
+            list[parentIndex] = temp;
+
+            currentIndex = parentIndex;
         }
     }
 
-    public class Fit
+    public T Dequeue()
     {
-        public void Main()
+        if (list.Count == 0)
         {
-            int[] x = { 1, 10, 30, 50 };
-            int[] y = { 84, 200, 560, 1920 };
-
-            double[] coefficients = FitPolynomial(x, y, 3);
-
-            Console.WriteLine("계수 a: " + coefficients[3]);
-            Console.WriteLine("계수 b: " + coefficients[2]);
-            Console.WriteLine("계수 c: " + coefficients[1]);
-            Console.WriteLine("계수 d: " + coefficients[0]);
+            throw new InvalidOperationException("Queue is empty.");
         }
 
-        static double[] FitPolynomial(int[] x, int[] y, int degree)
+        T frontItem = list[0];
+        int lastIndex = list.Count - 1;
+        list[0] = list[lastIndex];
+        list.RemoveAt(lastIndex);
+
+        int currentIndex = 0;
+        while (true)
         {
-            int n = x.Length;
-            double[,] matrix = new double[degree + 1, degree + 2];
+            int leftChildIndex = 2 * currentIndex + 1;
+            int rightChildIndex = 2 * currentIndex + 2;
+            int smallestChildIndex = currentIndex;
 
-            for (int i = 0; i <= degree; i++)
+            if (leftChildIndex < list.Count && list[leftChildIndex].CompareTo(list[smallestChildIndex]) < 0)
             {
-                for (int j = 0; j <= degree; j++)
-                {
-                    for (int k = 0; k < n; k++)
-                    {
-                        matrix[i, j] += Math.Pow(x[k], i + j);
-                    }
-                }
-
-                for (int k = 0; k < n; k++)
-                {
-                    matrix[i, degree + 1] += y[k] * Math.Pow(x[k], i);
-                }
+                smallestChildIndex = leftChildIndex;
             }
 
-            // 가우스 소거법을 사용하여 방정식 풀기
-            for (int i = 0; i <= degree; i++)
+            if (rightChildIndex < list.Count && list[rightChildIndex].CompareTo(list[smallestChildIndex]) < 0)
             {
-                double pivot = matrix[i, i];
-                for (int j = i; j <= degree + 1; j++)
-                {
-                    matrix[i, j] /= pivot;
-                }
-
-                for (int k = 0; k <= degree; k++)
-                {
-                    if (k != i)
-                    {
-                        double factor = matrix[k, i];
-                        for (int j = i; j <= degree + 1; j++)
-                        {
-                            matrix[k, j] -= factor * matrix[i, j];
-                        }
-                    }
-                }
+                smallestChildIndex = rightChildIndex;
             }
 
-            // 계수 배열 반환
-            double[] coefficients = new double[degree + 1];
-            for (int i = 0; i <= degree; i++)
+            if (smallestChildIndex == currentIndex)
             {
-                coefficients[i] = matrix[i, degree + 1];
+                break;
             }
 
-            return coefficients;
+            // 부모와 자식 노드의 값을 교환
+            T temp = list[currentIndex];
+            list[currentIndex] = list[smallestChildIndex];
+            list[smallestChildIndex] = temp;
+
+            currentIndex = smallestChildIndex;
         }
+
+        return frontItem;
     }
-
 }

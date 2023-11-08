@@ -42,7 +42,7 @@ namespace _08.OOP_p
 
             public void Enter()
             {
-                Console.WriteLine("건물에 들어갑니다.")
+                Console.WriteLine("건물에 들어갑니다.");
             }
             public void Exit()
             {

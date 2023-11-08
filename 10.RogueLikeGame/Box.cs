@@ -9,7 +9,7 @@ namespace _10.Interface_t
     internal class Box :IOpenable, ILockable
     {
         bool locked = false;
-        Item item=null;
+        Item? item=null;
         public Box(bool locked)
         {
             this.locked = locked;
