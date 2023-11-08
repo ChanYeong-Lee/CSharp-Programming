@@ -10,6 +10,7 @@ namespace NOTEFORTRPG
     {
         public string name;
         public int cooldown;
+        public int priority;
 
         public void Use()
         {

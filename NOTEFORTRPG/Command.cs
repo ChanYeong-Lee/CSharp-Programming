@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace NOTEFORTRPG
 {
-    internal class Command
+    internal abstract class Command
     {
+        public int priority;
+        public abstract void Execute();
     }
 }

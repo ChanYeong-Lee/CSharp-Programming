@@ -1,23 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace NOTEFORTRPG
 {
-    internal class FireBall : Skill
+    internal class PrayForAttack : Skill
     {
-        public FireBall()
+
+        public PrayForAttack()
         {
-            name = "FireBall";
+            name = "PrayForAttack";
             cooldown = 4;
-            priority = 1;
+            priority = 2;
         }
         public void Use()
         {
-            Console.WriteLine("파이어볼!");
+            Console.WriteLine("공증!");
         }
+
     }
 }

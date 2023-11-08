@@ -7,8 +7,7 @@ namespace _11.Delegate_p
     {
         static void Main(string[] args)
         {
-
-            Generic.Test1();
+            Chain.Test2("Lee");
         }
     }
 }

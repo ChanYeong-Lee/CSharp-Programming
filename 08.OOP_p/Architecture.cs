@@ -29,7 +29,7 @@ namespace _08.OOP_p
         public interface IWindow
         {
             void OpenWindow();
-            void CloswWindow();
+            void CloseWindow();
         }
 
         public interface ILightable
@@ -84,7 +84,6 @@ namespace _08.OOP_p
 
             public void OpenWindow()
             {
-
             }
 
             public void CloseWindow()
