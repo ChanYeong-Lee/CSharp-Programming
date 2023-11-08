@@ -10,6 +10,9 @@
 
             player.OnHpChanged += hpBar.ShowHPBar;
             monster.OnHpChanged += hpBar.ShowHPBar;
+
+            player.Attack(monster);
+            monster.Attack(player);
         }
     }
 }
